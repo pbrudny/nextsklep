@@ -1,6 +1,13 @@
+import {Header} from "@/components/Header";
+import {Footer} from "@/components/Footer";
+
 const AboutPage = () => {
   return (
-    <>Hej Ziomek</>
+    <>
+      <Header/>
+      <h1>Hej Ziomek</h1>
+      <Footer/>
+    </>
   )
 }
 
