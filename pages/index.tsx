@@ -1,17 +1,14 @@
+import {Footer} from "@/components/Footer";
+import {Header} from "@/components/Header";
+
 export default function Home() {
   return (
-    <>
-      <header>
-        <nav className={"bg-gray-500"}>
-          Nawigacja
-        </nav>
-      </header>
-      <main>
-        Zawartosc
+    <div className="flex flex-col bg-teal-100 min-h-screen">
+      <Header/>
+      <main className={"flex-grow max-w-md mx-auto w-full"}>
+        Zawartość
       </main>
-      <footer className={"bg-gray-500"}>
-        Stopka
-      </footer>
-    </>
+      <Footer/>
+    </div>
   )
 }
