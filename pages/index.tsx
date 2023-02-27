@@ -1,5 +1,7 @@
 import {Footer} from "@/components/Footer";
 import {Header} from "@/components/Header";
+import {Main} from "@/components/Main";
+import {Product} from "@/components/Product";
 
 const DATA = {
   description: `Lorem ipsum dolor sit amet,
@@ -15,46 +17,13 @@ const DATA = {
 
 };
 
-interface RatingProps {
-  rating: number;
-}
-
-// typescript zwykle jest w stanie sam rozpoznać typy
-// za wyjątkiem paremetrów funkcji tam często trzeba podawać typ
-const Rating = ({rating}: RatingProps) => {
-  return <div className={"text-blue-500 font-bold"}>{rating}</div>
-};
-
-interface ProductProps {
-  data: {
-    description: string;
-    thumbnailUrl: string;
-    thumbnailAlt: string;
-    rating: number;
-  }
-};
-
-const Product = ({data}: ProductProps) => {
-  return (
-    <>
-      <img
-        src={data.thumbnailUrl}
-        alt={data.thumbnailAlt}
-      />
-      <p>
-        {data.description}
-      </p>
-      <Rating rating={data.rating}/>
-    </>
-  )
-};
 export default function Home() {
   return (
     <div className="flex flex-col bg-teal-100 min-h-screen">
       <Header/>
-      <main className={"flex-grow max-w-2xl mx-auto grid p-6 gap-6 sm:grid-cols-2"}>
+      <Main>
         <Product data={DATA}/>
-      </main>
+      </Main>
       <Footer/>
     </div>
   )
