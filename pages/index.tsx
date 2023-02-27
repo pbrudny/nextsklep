@@ -2,7 +2,7 @@ import {Footer} from "@/components/Footer";
 import {Header} from "@/components/Header";
 
 const DATA = {
- description: `Lorem ipsum dolor sit amet,
+  description: `Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
           Nam sollicitudin ex sit amet neque tempor, ac
           congue nisi tempus. Quisque vestibulum ac ex a
@@ -15,23 +15,45 @@ const DATA = {
 
 };
 
-const Rating = () => {
-  return <div className={"text-blue-500 font-bold"}>{DATA.rating}</div>
+interface RatingProps {
+  rating: number;
+}
+
+// typescript zwykle jest w stanie sam rozpoznać typy
+// za wyjątkiem paremetrów funkcji tam często trzeba podawać typ
+const Rating = ({rating}: RatingProps) => {
+  return <div className={"text-blue-500 font-bold"}>{rating}</div>
 };
 
+interface ProductProps {
+  data: {
+    description: string;
+    thumbnailUrl: string;
+    thumbnailAlt: string;
+    rating: number;
+  }
+};
+
+const Product = ({data}: ProductProps) => {
+  return (
+    <>
+      <img
+        src={data.thumbnailUrl}
+        alt={data.thumbnailAlt}
+      />
+      <p>
+        {data.description}
+      </p>
+      <Rating rating={data.rating}/>
+    </>
+  )
+};
 export default function Home() {
   return (
     <div className="flex flex-col bg-teal-100 min-h-screen">
       <Header/>
       <main className={"flex-grow max-w-2xl mx-auto grid p-6 gap-6 sm:grid-cols-2"}>
-        <img
-          src={DATA.thumbnailUrl}
-          alt={DATA.thumbnailAlt}
-        />
-        <p>
-          {DATA.description}
-         </p>
-        <Rating />
+        <Product data={DATA}/>
       </main>
       <Footer/>
     </div>
