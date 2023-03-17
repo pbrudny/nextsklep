@@ -1,7 +1,7 @@
 import {Footer} from "@/components/Footer";
 import {Header} from "@/components/Header";
 import {Main} from "@/components/Main";
-import {Product} from "@/components/Product";
+import {ProductDetails} from "@/components/ProductDetails";
 
 const DATA = {
   title: 'Elo elo',
@@ -23,7 +23,7 @@ export default function Home() {
     <div className="flex flex-col bg-teal-100 min-h-screen">
       <Header/>
       <Main>
-        <Product data={DATA}/>
+        <ProductDetails data={DATA}/>
       </Main>
       <Footer/>
     </div>

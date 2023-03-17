@@ -1,16 +1,18 @@
 import {Rating} from "@/components/Rating";
 
-interface ProductProps {
-  data: {
-    title: string;
-    description: string;
-    thumbnailUrl: string;
-    thumbnailAlt: string;
-    rating: number;
-  }
+interface ProductDetails {
+  title: string;
+  description: string;
+  thumbnailUrl: string;
+  thumbnailAlt: string;
+  rating: number;
 }
 
-export const Product = ({data}: ProductProps) => {
+interface ProductProps {
+  data: ProductDetails;
+};
+
+export const ProductDetails = ({data}: ProductProps) => {
   return (
     <>
       <img
