@@ -1,6 +1,9 @@
+import {InferGetStaticPropsType} from "next";
 
-const ProductsPage = () => {
-  return <div>Siemka</div>
+const ProductsPage = ({
+  data,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return <div>{data[0].title}</div>
 };
 
 fetch('https://fakestoreapi.com/products/1')
