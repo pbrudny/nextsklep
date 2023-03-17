@@ -13,12 +13,20 @@ fetch('https://fakestoreapi.com/products/1')
 
 export default ProductsPage;
 
-// to się wykonuje raz w trakcie buildowania aplikacji
-// czyli ta funkcja już nie jest widoczna w przeglądarce
+// w trybie produkcyjnym to się wykonuje raz w trakcie buildowania
+// aplikacji czyli ta funkcja już nie jest widoczna w przeglądarce
 // czyli Next sobie trzyma te propsy
+// w trybie developerskim dzieje się to przy każdej zmianie kodu
 export const getStaticProps = async () => {
   const res = await fetch(`https://fakestoreapi.com/products`)
   const data: StoreApiResponse[] = await res.json();
+
+  const inneDate = {
+    // tu można by pobierać inne dane o swoim kształcie
+    // getStaticProps nam by to scalił
+    // InferGetStaticProps by ogarnąć typy (kształt), który już by odbiegał
+    // od samego StoreApiRespons
+  }
 
   return {
     props: {
