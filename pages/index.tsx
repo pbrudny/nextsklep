@@ -4,6 +4,7 @@ import {Main} from "@/components/Main";
 import {Product} from "@/components/Product";
 
 const DATA = {
+  title: 'Elo elo',
   description: `Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
           Nam sollicitudin ex sit amet neque tempor, ac

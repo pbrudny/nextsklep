@@ -25,3 +25,15 @@ export const Product = ({data}: ProductProps) => {
     </>
   )
 };
+
+// ProTip:
+// Zakładka Elements wyświetla nam kod (DOM),
+// który został wyrenderowany przez klienta –
+// czyli najpierw zwrócony z serwera,
+// a potem zmodyfikowany przez JavaScript.
+
+//  Natomiast otwarcie "View Page Source"
+//  powoduje wyświetlenie kodu w takiej postaci,
+//  w jakiej dostarczył go nam serwer – bez zmian w JS.
+// w standardowym JS owym SPA to by był sam <root></root>
+// a NEXT juz to tam dostarcza html
