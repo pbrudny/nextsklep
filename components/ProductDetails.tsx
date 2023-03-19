@@ -1,6 +1,7 @@
 import {Rating} from "@/components/Rating";
 
 interface ProductDetails {
+  id: number;
   title: string;
   description: string;
   thumbnailUrl: string;

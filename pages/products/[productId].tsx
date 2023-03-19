@@ -1,6 +1,7 @@
 import {StoreApiResponse} from "@/pages/products";
 import {GetStaticPropsContext, InferGetStaticPropsType} from "next";
 import {ProductDetails} from "@/components/ProductDetails";
+import Link from "next/link";
 
 const ProductIdPage = ({
                          data
@@ -10,7 +11,11 @@ const ProductIdPage = ({
   }
 
   return <div>
+    <Link href={"/products"}>
+      Wróć na stronę główną
+    </Link>
     <ProductDetails data={{
+      id: data.id,
       title: data.title,
       thumbnailUrl: data.image,
       thumbnailAlt: data.title,
